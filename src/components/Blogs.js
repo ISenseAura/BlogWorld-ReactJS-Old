@@ -59,7 +59,7 @@ const Blogs = (props)=>{
                     <div className="row">
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.id}>
-                                <BlogItem title={element.title ? element.title : ""} description={element.text ? element.text : ""} imageUrl={element.img}  author={element.author} date={element.dateCreated}  />
+                                <BlogItem title={element.title ? element.title : ""} description={element.body.text ? element.body.text : ""} imageUrl={element.body.img}  author={element.author} date={element.dateCreated}  />
                             </div>
                         })}
                     </div>

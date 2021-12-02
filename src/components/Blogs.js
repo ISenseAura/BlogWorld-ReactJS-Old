@@ -17,7 +17,7 @@ const Blogs = (props)=>{
 
     const updateBlogs = async ()=> {
         props.setProgress(10);
-        const url = `http://localhost:5000/api/posts/posts`; 
+        const url = `https://glistening-lackadaisical-glue.glitch.me/api/posts/posts`; 
         setLoading(true)
         let data = await fetch(url);
         props.setProgress(30);
@@ -36,7 +36,7 @@ const Blogs = (props)=>{
 
 
     const fetchMoreData = async () => {   
-        const url = `http://localhost:5000/api/posts/posts`;
+        const url = `https://glistening-lackadaisical-glue.glitch.me/api/posts/posts`;
          setPage(page+1) 
         let data = await fetch(url);
         let parsedData = await data.json()

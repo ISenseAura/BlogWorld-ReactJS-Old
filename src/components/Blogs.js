@@ -46,7 +46,7 @@ const Blogs = (props)=>{
  
         return (
             <>
-                <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>MyBlogWorld - Top {capitalizeFirstLetter(props.category)} Headlines</h1>
+                <h1 className="text-center" style={{ margin: '35px 0px', marginTop: '90px' }}>Recent Blogs</h1>
                 {loading && <Spinner />}
                 <InfiniteScroll
                     dataLength={articles.length}

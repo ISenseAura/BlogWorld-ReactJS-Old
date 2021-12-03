@@ -51,7 +51,7 @@ const BlogItem = (props)=> {
                         <p className="card-text">{description}</p>
                       <div className="d-flex justify-content-between align-items-center">
                                             <div className="btn-group">
-                  <button type="button" className="btn btn-sm btn-outline-secondary">Like</button>
+                  <button type="button" className="btn btn-sm btn-outline-secondary"><i class="bi-class-"></i> </button>
                   <button type="button" className="btn btn-sm btn-outline-secondary">Dislike</button>
                 </div>
                 <small className="text-muted"> <small> {new Date(date).toGMTString()}</small></small>

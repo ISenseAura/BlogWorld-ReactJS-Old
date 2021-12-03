@@ -70,10 +70,10 @@ const Blogs = (props)=>{
                   
                     <div className="container">
                          
-                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 g-2">
         
                         {articles.map((element) => {
-                            return <div className="col" key={element.id}>
+                            return <div height="500"className="col" key={element.id}>
                                 <BlogItem title={element.title ? element.title : ""} description={element.body.text ? element.body.text : ""} imageUrl={element.body.img}  author={element.author} date={element.dateCreated}  />
                             </div>
                         })}

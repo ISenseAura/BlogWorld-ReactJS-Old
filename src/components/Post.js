@@ -82,7 +82,7 @@ const AddPost = (props) => {
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tag" className="form-label">Image Link</label>
-                    <input type="text" className="form-control" id="tag" name="tag" value={note.img} onChange={onChange} minLength={5} required />
+                    <input type="text" className="form-control" id="tag" name="img" value={note.img} onChange={onChange} minLength={5} required />
                 </div>
                
                 <button  type="submit" className="btn btn-primary" onClick={addNote}>Add Post</button>

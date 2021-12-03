@@ -35,7 +35,7 @@ const BlogItem = (props)=> {
 */
         return (
             <div className="my-3">
-                <div className="card">
+                <div className="card card shadow-lg">
                     <div style={{
                         display: 'flex',
                         justifyContent: 'flex-end',
@@ -43,19 +43,20 @@ const BlogItem = (props)=> {
                         right: '0'
                     }
                     }> 
-                        <span className="badge rounded-pill bg-danger"> 'test' </span>
+                        <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>
                     </div>
                     <img src={!imageUrl ? "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg" : imageUrl} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{title}  </h5>
                         <p className="card-text">{description}</p>
-                        <p className="card-text"><small className="text-muted">By {!author ? "Unknown" : author} on  {new Date(date).toGMTString()}</small></p>
-                         <div className="btn-group">
-                  <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                  <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+                      <div className="d-flex justify-content-between align-items-center">
+                                            <div className="btn-group">
+                  <button type="button" className="btn btn-sm btn-outline-secondary">Like</button>
+                  <button type="button" className="btn btn-sm btn-outline-secondary">Dislike</button>
                 </div>
-                <small className="text-muted">{date}</small>
+                <small className="text-muted"> <small> {new Date(date).toGMTString()}</small></small>
                     </div>
+                  </div>
                 </div>
             </div>
         )

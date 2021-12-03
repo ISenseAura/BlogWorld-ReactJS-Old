@@ -5,6 +5,7 @@ import NavBar from './components/NavBar';
 import Blogs from './components/Blogs';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import AddPost from './components/Post';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
@@ -30,6 +31,8 @@ const App = ()=> {
               <Route exact path="/write"><NavBar setProgress={setProgress}  key="business" pageSize={pageSize} country="in" category="business"/></Route> 
           <Route exact path="/login"><Login setProgress={setProgress}  key="entertainment" pageSize={pageSize} country="in" category="entertainment"/></Route> 
     <Route exact path="/signup"><SignUp/></Route> 
+              
+              <Route exact path="/create"><AddPost/></Route> 
     
             </Switch>
           </div>

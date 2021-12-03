@@ -28,48 +28,60 @@ const AddPost = (props) => {
         }
     }
 
-     const addNote = async (title, description, tag) => {
+     const [note, setNote] = useState({title: "", description: "", img: ""})
+    
+     const addNote = async (title, description, img) => {
     // TODO: API Call
     // API Call 
+       if(!localStorage.getItem("token")) {
+         alert("You need to login first");
+         history.push("/login");
+         return;
+       }
     const response = await fetch(`https://glistening-lackadaisical-glue.glitch.me/api/posts/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         "auth-token":  localStorage.getItem('token')
       },
-      body: JSON.stringify({title, description, tag})
+      body: JSON.stringify({title, text : description, img})
     });
 
-    const note = await response.json();
-  
+    const json = await response.json();
+  if (json.success){
+           
+            history.push("/");
+
+        }
+        else{
+            alert("Invalid credentials");
+        }
   }
     
     
     
     const onChange = (e)=>{
-        setCredentials({...credentials, [e.target.name]: e.target.value})
+        setNote({...credentials, [e.target.name]: e.target.value})
     }
 
     return (
-        <div>
-            <form className = "my-4 mx-3" onSubmit={handleSubmit}>
-              <h2><center> Sign Up</center></h2>
-              <div className="mb-3">
-                    <label htmlFor="username" className="form-label">username</label>
-                    <input type="username" className="form-control" value={credentials.username} onChange={onChange} id="username" name="username" aria-describedby="emailHelp" />
-                    
+               <div className="container my-3">
+            <h2>Add a Blog</h2>
+            <form className="my-3">
+                <div className="mb-3">
+                    <label htmlFor="title" className="form-label">Title</label>
+                    <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange} minLength={5} required /> 
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="email" className="form-label">Email address</label>
-                    <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
-                    <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
+                    <label htmlFor="description" className="form-label">Description</label>
+                    <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange} minLength={5} required />
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="password" className="form-label">Password</label>
-                    <input type="password" className="form-control" value={credentials.password} onChange={onChange} name="password" id="password" />
+                    <label htmlFor="tag" className="form-label">Image Link</label>
+                    <input type="text" className="form-control" id="tag" name="tag" value={note.img} onChange={onChange} minLength={5} required />
                 </div>
-
-                <button type="submit" className="btn btn-primary">Submit</button>
+               
+                <button  type="submit" className="btn btn-primary" onClick={addNote}>Add Post</button>
             </form>
         </div>
     )

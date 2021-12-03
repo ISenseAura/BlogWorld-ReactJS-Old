@@ -40,17 +40,18 @@ const AddPost = (props) => {
          history.push("/login");
          return;
        }
-       alert(localStorage.getItem('token'))
+       
     const response = await fetch(`https://glistening-lackadaisical-glue.glitch.me/api/posts/create`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         "auth-token" : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiemVyYXBpdW0iLCJ1c2VybmFtZSI6IlplcmFwaXVtIiwiZW1haWwiOiJtbW1AbW0uY29tIn0sImlhdCI6MTYzODUyNDM0Nn0.eWm0y_ULVu57suXg7BhHwS1XKisqLd0ZQDMYCp7UPXo`
       },
-      body: JSON.stringify({title : note.title, text : note.description, img : note.img})
+      body: JSON.stringify({'title' : note.title, 'text' : note.description, 'img' : note.img})
     });
 
     const json = await response.json();
+       console.log(json);
   if (json.success){
            
             history.push("/");
@@ -64,7 +65,7 @@ const AddPost = (props) => {
     
     
     const onChange = (e)=>{
-        setNote({...credentials, [e.target.name]: e.target.value})
+        setNote({...note, [e.target.name]: e.target.value})
     }
 
     return (

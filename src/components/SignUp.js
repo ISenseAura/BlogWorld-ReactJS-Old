@@ -2,18 +2,18 @@ import React, {useState} from 'react'
 import { useHistory } from 'react-router-dom'
 
 
-const Login = (props) => {
-    const [credentials, setCredentials] = useState({email: "", password: ""}) 
+const SignUp = (props) => {
+    const [credentials, setCredentials] = useState({email: "", password: "",username:""}) 
     let history = useHistory();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/auth/emaillogin", {
+        const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/auth/signup", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({email: credentials.email, password: credentials.password})
+            body: JSON.stringify({username :  credentials.username, email: credentials.email, password: credentials.password})
         });
         const json = await response.json()
         console.log(json);
@@ -35,6 +35,12 @@ const Login = (props) => {
     return (
         <div>
             <form className = "my-4 mx-3" onSubmit={handleSubmit}>
+              <h2><center> Sign Up</center></h2>
+              <div className="mb-3">
+                    <label htmlFor="username" className="form-label">username</label>
+                    <input type="username" className="form-control" value={credentials.username} onChange={onChange} id="username" name="username" aria-describedby="emailHelp" />
+                    
+                </div>
                 <div className="mb-3">
                     <label htmlFor="email" className="form-label">Email address</label>
                     <input type="email" className="form-control" value={credentials.email} onChange={onChange} id="email" name="email" aria-describedby="emailHelp" />
@@ -51,4 +57,4 @@ const Login = (props) => {
     )
 }
 
-export default Login
+export default SignUp

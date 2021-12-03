@@ -30,9 +30,11 @@ const AddPost = (props) => {
 
      const [note, setNote] = useState({title: "", description: "", img: ""})
     
-     const addNote = async (title, description, img) => {
+     const addNote = async (e) => {
     // TODO: API Call
     // API Call 
+       
+         e.preventDefault();
        if(!localStorage.getItem("token")) {
          alert("You need to login first");
          history.push("/login");
@@ -44,7 +46,7 @@ const AddPost = (props) => {
         'Content-Type': 'application/json',
         "auth-token":  localStorage.getItem('token')
       },
-      body: JSON.stringify({title, text : description, img})
+      body: JSON.stringify({title : note.title, text : note.description, img : note.img})
     });
 
     const json = await response.json();
@@ -67,7 +69,7 @@ const AddPost = (props) => {
     return (
                <div className="container my-3">
             <h2>Add a Blog</h2>
-            <form className="my-3">
+            <form className="my-3" onSubmit={addNote}>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange} minLength={5} required /> 

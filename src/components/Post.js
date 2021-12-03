@@ -45,7 +45,7 @@ const AddPost = (props) => {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        "auth-token" : "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7II5Nn0.Ts62mQ8ueBxziQIOSUEhmwJQdcQ9PVHvnwivSsCyt2Y"
+        "auth-token" : `eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiemVyYXBpdW0iLCJ1c2VybmFtZSI6IlplcmFwaXVtIiwiZW1haWwiOiJtbW1AbW0uY29tIn0sImlhdCI6MTYzODUyNDM0Nn0.eWm0y_ULVu57suXg7BhHwS1XKisqLd0ZQDMYCp7UPXo`
       },
       body: JSON.stringify({title : note.title, text : note.description, img : note.img})
     });

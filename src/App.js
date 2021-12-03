@@ -3,6 +3,7 @@ import './App.css';
 import React, { useState } from 'react'
 import NavBar from './components/NavBar';
 import Blogs from './components/Blogs';
+import Login from './components/Login';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
@@ -20,16 +21,18 @@ const App = ()=> {
         color='#f11946'
         progress={progress} 
       />
-        <Switch>
-          <Route exact path="/"><Blogs setProgress={setProgress}  key="general" pageSize={pageSize} country="in" category="general"/></Route> 
-          <Route exact path="/write"><NavBar setProgress={setProgress}  key="business" pageSize={pageSize} country="in" category="business"/></Route> 
-          <Route exact path="/entertainment"><Blogs setProgress={setProgress}  key="entertainment" pageSize={pageSize} country="in" category="entertainment"/></Route> 
-          <Route exact path="/general"><Blogs setProgress={setProgress}  key="general" pageSize={pageSize} country="in" category="general"/></Route> 
-          <Route exact path="/health"><Blogs setProgress={setProgress} key="health" pageSize={pageSize} country="in" category="health"/></Route> 
-          <Route exact path="/science"><Blogs setProgress={setProgress} key="science" pageSize={pageSize} country="in" category="science"/></Route> 
-          <Route exact path="/sports"><Blogs setProgress={setProgress}  key="sports" pageSize={pageSize} country="in" category="sports"/></Route> 
-          <Route exact path="/technology"><Blogs setProgress={setProgress}  key="technology" pageSize={pageSize} country="in" category="technology"/></Route> 
-        </Switch>
+          
+           <div className="container">
+            <Switch>
+             <Route exact path="/"><Blogs setProgress={setProgress}  key="general" pageSize={pageSize} country="in" category="general"/></Route> 
+   
+              <Route exact path="/write"><NavBar setProgress={setProgress}  key="business" pageSize={pageSize} country="in" category="business"/></Route> 
+          <Route exact path="/login"><Login setProgress={setProgress}  key="entertainment" pageSize={pageSize} country="in" category="entertainment"/></Route> 
+    
+            </Switch>
+          </div>
+          
+      
         </Router>
       </div>
     )

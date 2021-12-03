@@ -22,7 +22,7 @@ const App = ()=> {
       />
         <Switch>
           <Route exact path="/"><Blogs setProgress={setProgress}  key="general" pageSize={pageSize} country="in" category="general"/></Route> 
-          <Route exact path="/business"><Blogs setProgress={setProgress}  key="business" pageSize={pageSize} country="in" category="business"/></Route> 
+          <Route exact path="/write"><NavBar setProgress={setProgress}  key="business" pageSize={pageSize} country="in" category="business"/></Route> 
           <Route exact path="/entertainment"><Blogs setProgress={setProgress}  key="entertainment" pageSize={pageSize} country="in" category="entertainment"/></Route> 
           <Route exact path="/general"><Blogs setProgress={setProgress}  key="general" pageSize={pageSize} country="in" category="general"/></Route> 
           <Route exact path="/health"><Blogs setProgress={setProgress} key="health" pageSize={pageSize} country="in" category="health"/></Route> 

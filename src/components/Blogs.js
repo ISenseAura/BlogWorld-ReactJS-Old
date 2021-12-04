@@ -74,7 +74,7 @@ const Blogs = (props)=>{
         
                         {articles.map((element) => {
                             return <div height="500"className="col" key={element.id}>
-                                <BlogItem title={element.title ? element.title : ""} description={element.body.text ? element.body.text : ""} imageUrl={element.body.img}  author={element.author} date={element.dateCreated}  />
+                                <BlogItem id={element.id} title={element.title ? element.title : ""} description={element.body.text ? element.body.text : ""} imageUrl={element.body.img}  author={element.author} date={element.dateCreated}  />
                             </div>
                         })}
                     </div>

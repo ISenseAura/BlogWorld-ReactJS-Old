@@ -40,6 +40,8 @@ const AddPost = (props) => {
          history.push("/login");
          return;
        }
+       localStorage.setItem('token', "fcghdf"); 
+       alert(localStorage.getItem("token"));
        
     const response = await fetch(`https://glistening-lackadaisical-glue.glitch.me/api/posts/create`, {
       method: 'POST',

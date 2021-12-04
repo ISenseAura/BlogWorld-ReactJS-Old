@@ -16,11 +16,11 @@ const BlogItem = (props)=> {
     let json = await response.json()
     alert(json);
     if(json.success) {
-      alert("Post deleted successfully")
-      window.reload();
+      alert("Post deleted successfully, refresh the page to see changes");
+    
     }
     else {
-      alert("Access Denied")
+      alert(json.msg)
     }
     
   }

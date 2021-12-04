@@ -3,9 +3,9 @@ import { Link } from "react-router-dom";
 import { useHistory } from 'react-router-dom'
 
 const NavBar = () => {
-
+  let history = useHistory();
   const ff = () => {
-    let history = useHistory();
+  
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     history.push("/login");

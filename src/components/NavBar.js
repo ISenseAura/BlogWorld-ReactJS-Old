@@ -1,8 +1,17 @@
 import React from 'react'
 import { Link } from "react-router-dom";
+import { useHistory } from 'react-router-dom'
 
 const NavBar = () => {
 
+  const ff = () => {
+    let history = useHistory();
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    history.push("/login");
+  }
+  
+  
   
   return (
             
@@ -23,6 +32,7 @@ const NavBar = () => {
                             <li className="nav-item"><Link className="nav-link" to="/myblogs">My Blogs</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/login">Login</Link></li>
                             <li className="nav-item"><Link className="nav-link" to="/signup">SignUp</Link></li>
+                          <li className="nav-item"><a onClick = {ff} className="nav-link" href="#">Logout (Logged in as <b>{localStorage.getItem("user") ? localStorage.getItem("user") : "_"}</b>)</a></li>
                       
                         </ul>
         </div>

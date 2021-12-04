@@ -20,6 +20,7 @@ const Login = (props) => {
         if (json.success){
             // Save the auth token and redirect
             localStorage.setItem('token', json.token); 
+          localStorage.setItem("user",json.name)
             history.push("/");
 
         }

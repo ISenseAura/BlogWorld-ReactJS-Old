@@ -19,6 +19,7 @@ const SignUp = (props) => {
         console.log(json);
         if (json.success){
             // Save the auth token and redirect
+           localStorage.setItem("user",credentials.username)
             localStorage.setItem('token', json.authtoken); 
             history.push("/");
 

@@ -24,6 +24,12 @@ const BlogItem = (props)=> {
     }
     
   }
+  /*
+  const likePost = () {
+    
+    
+    
+    }*/
   
   
   /*

@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BlogItem = (props)=> {
-        let { title, description, imageUrl, author, date, id } = props;
+        let { title, description, imageUrl, author, date, id, likes, dislikes } = props;
   
   const deletePost = async () => {
     alert(id);
@@ -24,12 +24,60 @@ const BlogItem = (props)=> {
     }
     
   }
-  /*
-  const likePost = () {
+  
+  const likePost = async () => {
+    
+        alert(id);
+    const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/like/" + id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+              'auth-token' : localStorage.getItem("token")
+            }
+
+        });
+    let json = await response.json()
+    alert(json);
+    if(json.success) {
+      alert(json.msg);
+    
+    }
+    else {
+      alert(json.msg)
+    }
+    
+  }
     
     
+
+
+  
+  const dislikePost = async () => {
     
-    }*/
+        alert(id);
+    const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/dislike/" + id, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+              'auth-token' : localStorage.getItem("token")
+            }
+
+        });
+    let json = await response.json()
+    alert(json);
+    if(json.success) {
+      alert(json.msg);
+    
+    }
+    else {
+      alert(json.msg)
+    }
+    
+  }
+    
+    
+
+
   
   
   /*
@@ -82,7 +130,7 @@ const BlogItem = (props)=> {
                       <div className="d-flex justify-content-between align-items-center">
                                             <div className="btn-group">
                   <button type="button" onclick={likePost} className="btn btn-sm btn-outline-secondary">👍 31 <i class="bi-like"></i> </button>
-                  <button type="button" className="btn btn-sm btn-outline-secondary">👎 21</button>
+                  <button type="button" onclick={dislikePost} className="btn btn-sm btn-outline-secondary">👎 21</button>
                 </div> <br></br>
                         <button type="button" onClick={deletePost} className="btn btn-sm btn-outline-secondary">DELETE</button>
       
@@ -92,7 +140,7 @@ const BlogItem = (props)=> {
                 </div>
             </div>
         )
-     
 }
+
 
 export default BlogItem

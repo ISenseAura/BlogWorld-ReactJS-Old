@@ -129,8 +129,8 @@ const BlogItem = (props)=> {
                         <p className="card-text">{description}</p>
                       <div className="d-flex justify-content-between align-items-center">
                                             <div className="btn-group">
-                  <button type="button" onclick={likePost} className="btn btn-sm btn-outline-secondary">👍 31 <i class="bi-like"></i> </button>
-                  <button type="button" onclick={dislikePost} className="btn btn-sm btn-outline-secondary">👎 21</button>
+                  <button type="button" onclick={likePost} className="btn btn-sm btn-outline-secondary">👍 {likes} <i class="bi-like"></i> </button>
+                  <button type="button" onclick={dislikePost} className="btn btn-sm btn-outline-secondary">👎 {dislikes} </button>
                 </div> <br></br>
                         <button type="button" onClick={deletePost} className="btn btn-sm btn-outline-secondary">DELETE</button>
       

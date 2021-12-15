@@ -4,7 +4,6 @@ const BlogItem = (props)=> {
         let { title, description, imageUrl, author, date, id, likes, dislikes } = props;
   
   const deletePost = async () => {
-    alert(id);
     const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/delete/" + id, {
             method: 'GET',
             headers: {
@@ -14,7 +13,6 @@ const BlogItem = (props)=> {
 
         });
     let json = await response.json()
-    alert(json);
     if(json.success) {
       alert("Post deleted successfully, refresh the page to see changes");
     
@@ -27,7 +25,6 @@ const BlogItem = (props)=> {
   
   const likePost = async () => {
     
-        alert(id);
     const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/like/" + id, {
             method: 'GET',
             headers: {
@@ -37,7 +34,6 @@ const BlogItem = (props)=> {
 
         });
     let json = await response.json()
-    alert(json);
     if(json.success) {
       alert(json.msg);
     

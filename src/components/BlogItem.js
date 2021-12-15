@@ -109,7 +109,7 @@ const BlogItem = (props)=> {
 */
         return (
             <div className="my-3">
-                <div className="card card shadow-md">
+                <div className="card card shadow-sm">
                     <div style={{
                         display: 'flex',
                         justifyContent: 'flex-end',

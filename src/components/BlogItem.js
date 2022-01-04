@@ -116,7 +116,7 @@ const BlogItem = (props)=> {
   );
 */
         return (
-            <div className="my-3" onClick={window.location.href='/viewpost'}>
+            <div className="my-3">
                 <div className="card card shadow-sm">
                     <div style={{
                         display: 'flex',
@@ -125,8 +125,12 @@ const BlogItem = (props)=> {
                         right: '0'
                     }
                     }> 
-                      
-                      <Route exact path="/viewpost"><BlogView {...props} title={`Props through render`} /></Route>
+                      <Router>
+                      <Switch>
+                                              <Route exact path="/viewpost"><BlogView {...props} title={`Props through render`} /></Route>
+
+                        </Switch>
+                      </Router>
 
 
                         <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>

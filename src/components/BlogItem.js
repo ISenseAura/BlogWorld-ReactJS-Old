@@ -125,12 +125,7 @@ const BlogItem = (props)=> {
                         right: '0'
                     }
                     }> 
-                      <Router>
-                      <Switch>
-                    <Route exact path="/viewpost"><BlogView {...props} title={`Props through render`} /></Route>
-
-                        </Switch>
-                      </Router>
+                     
 
 
                         <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>
@@ -147,7 +142,7 @@ const BlogItem = (props)=> {
                         <button type="button" onClick={deletePost} className="btn btn-sm btn-outline-secondary">DELETE</button>
       
                 <small className="text-muted"> <small> {new Date(date).toGMTString()}</small></small>
-                        <Link className="nav-link" to="/viewpost">SignUp</Link>
+                        <Link className="nav-link" to="/article/ss">SignUp</Link>
                     </div>
                   </div>
                 </div>

@@ -36,8 +36,7 @@ const App = ()=> {
               
               <Route exact path="/create"><AddPost/></Route> 
               
-                  <Route exact path="/viewpost"><BlogView/></Route> 
-
+<Route path="/article/:tag" children={<BlogView />} />
             </Switch>
           </div>
           

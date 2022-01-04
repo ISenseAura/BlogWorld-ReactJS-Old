@@ -1,6 +1,8 @@
 import React from 'react'
 import BlogView from './BlogView'
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 
 
@@ -141,6 +143,7 @@ const BlogItem = (props)=> {
                         <button type="button" onClick={deletePost} className="btn btn-sm btn-outline-secondary">DELETE</button>
       
                 <small className="text-muted"> <small> {new Date(date).toGMTString()}</small></small>
+                        <Link className="nav-link" to="/viewpost">SignUp</Link>
                     </div>
                   </div>
                 </div>

@@ -142,7 +142,7 @@ const BlogItem = (props)=> {
                         <button type="button" onClick={deletePost} className="btn btn-sm btn-outline-secondary">DELETE</button>
       
                 <small className="text-muted"> <small> {new Date(date).toGMTString()}</small></small>
-                        <Link className="nav-link" to="/article/ss">SignUp</Link>
+                        <Link className="nav-link" to={"/article/" + id } >Read More</Link>
                     </div>
                   </div>
                 </div>

@@ -1,5 +1,7 @@
 import React from 'react'
 import BlogView from './BlogView'
+import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
+
 
 
 const BlogItem = (props)=> {
@@ -112,7 +114,7 @@ const BlogItem = (props)=> {
   );
 */
         return (
-            <div className="my-3">
+            <div className="my-3" onClick={window.location.href='/viewpost'}>
                 <div className="card card shadow-sm">
                     <div style={{
                         display: 'flex',
@@ -122,7 +124,7 @@ const BlogItem = (props)=> {
                     }
                     }> 
                       
-                      <Route exact path="/viewpost" render={(props) => < {...props} title={`Props through render`} />} />
+                      <Route exact path="/viewpost" render={(props) => <BlogView {...props} title={`Props through render`} />} />
 
 
                         <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>
@@ -133,7 +135,7 @@ const BlogItem = (props)=> {
                         <p className="card-text">{description}</p>
                       <div className="d-flex justify-content-between align-items-center">
                                             <div className="btn-group">
-                  <button type="button" onClick={likePost} className="btn btn-sm btn-outline-secondary">👍 {likes} <i class="bi-like"></i> </button>
+                  <button type="button" onClick={likePost} className="btn btn-sm btn-outline-secondary">👍 {likes} <i className="bi-like"></i> </button>
                   <button type="button" onClick={dislikePost} className="btn btn-sm btn-outline-secondary">👎 {dislikes} </button>
                 </div> <br></br>
                         <button type="button" onClick={deletePost} className="btn btn-sm btn-outline-secondary">DELETE</button>

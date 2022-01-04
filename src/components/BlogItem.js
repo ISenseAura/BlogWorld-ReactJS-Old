@@ -1,4 +1,6 @@
 import React from 'react'
+import BlogView from './BlogView'
+
 
 const BlogItem = (props)=> {
         let { title, description, imageUrl, author, date, id, likes, dislikes, fetchB } = props;
@@ -121,7 +123,7 @@ const BlogItem = (props)=> {
                     }> 
                         <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>
                     </div>
-                    <img width="100%" height="225" src={!imageUrl ? "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg" : imageUrl} className="card-img-top" alt="..." />
+                    <img  width="100%" height="225" src={!imageUrl ? "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg" : imageUrl} className="card-img-top" alt="..." />
                     <div className="card-body">
                         <h5 className="card-title">{title}  </h5>
                         <p className="card-text">{description}</p>

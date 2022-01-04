@@ -126,7 +126,7 @@ const BlogItem = (props)=> {
                     }
                     }> 
                       
-                      <Route exact path="/viewpost" render={(props) => <BlogView {...props} title={`Props through render`} />} />
+                      <Route exact path="/viewpost"><BlogView {...props} title={`Props through render`} /></Route>
 
 
                         <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>

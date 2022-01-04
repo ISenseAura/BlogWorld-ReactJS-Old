@@ -77,7 +77,7 @@ const BlogView= (props)=> {
         return (
             <div className="my-3">
             <figure class="figure">
-  <img src="..." class="figure-img img-fluid rounded" alt="...">
+              <img src="..." class="figure-img img-fluid rounded" alt="..."></img>
   <figcaption class="figure-caption">A caption for the above image.</figcaption>
 </figure>
             </div>

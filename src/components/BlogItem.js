@@ -127,7 +127,7 @@ const BlogItem = (props)=> {
                     }> 
                       <Router>
                       <Switch>
-                                              <Route exact path="/viewpost"><BlogView {...props} title={`Props through render`} /></Route>
+                    <Route exact path="/viewpost"><BlogView {...props} title={`Props through render`} /></Route>
 
                         </Switch>
                       </Router>

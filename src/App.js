@@ -6,6 +6,8 @@ import Blogs from './components/Blogs';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import AddPost from './components/Post';
+import BlogView from './components/BlogView';
+
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import LoadingBar from 'react-top-loading-bar'
 
@@ -34,7 +36,8 @@ const App = ()=> {
               
               <Route exact path="/create"><AddPost/></Route> 
               
-    
+                  <Route exact path="/viewpost"><BlogView/></Route> 
+
             </Switch>
           </div>
           

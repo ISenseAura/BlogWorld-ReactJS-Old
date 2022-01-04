@@ -1,7 +1,7 @@
 import React from 'react'
 
 const BlogItem = (props)=> {
-        let { title, description, imageUrl, author, date, id, likes, dislikes } = props;
+        let { title, description, imageUrl, author, date, id, likes, dislikes, fetchB } = props;
   
   const deletePost = async () => {
     const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/delete/" + id, {
@@ -14,12 +14,13 @@ const BlogItem = (props)=> {
         });
     let json = await response.json()
     if(json.success) {
-      alert("Post deleted successfully, refresh the page to see changes");
+    fetchB();
     
     }
     else {
       alert(json.msg)
     }
+    
     
   }
   
@@ -35,12 +36,13 @@ const BlogItem = (props)=> {
         });
     let json = await response.json()
     if(json.success) {
-      alert(json.msg);
+        fetchB();
     
     }
     else {
       alert(json.msg)
     }
+
     
   }
     
@@ -62,12 +64,12 @@ const BlogItem = (props)=> {
     let json = await response.json()
     alert(json);
     if(json.success) {
-      alert(json.msg);
-    
+              fetchB();    
     }
     else {
       alert(json.msg)
     }
+
     
   }
     

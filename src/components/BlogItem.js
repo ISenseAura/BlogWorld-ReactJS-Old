@@ -121,6 +121,10 @@ const BlogItem = (props)=> {
                         right: '0'
                     }
                     }> 
+                      
+                      <Route exact path="/viewpost" render={(props) => < {...props} title={`Props through render`} />} />
+
+
                         <span className="badge rounded-pill bg-danger"> {!author ? "Unknown" : author} </span>
                     </div>
                     <img  width="100%" height="225" src={!imageUrl ? "https://fdn.gsmarena.com/imgroot/news/21/08/xiaomi-smart-home-india-annoucnements/-476x249w4/gsmarena_00.jpg" : imageUrl} className="card-img-top" alt="..." />

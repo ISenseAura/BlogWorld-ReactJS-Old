@@ -33,6 +33,7 @@ const App = ()=> {
     <Route exact path="/signup"><SignUp/></Route> 
               
               <Route exact path="/create"><AddPost/></Route> 
+              
     
             </Switch>
           </div>

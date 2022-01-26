@@ -74,13 +74,23 @@ const AddPost = (props) => {
                <div className="container my-3">
             <h2>Add a Blog</h2>
             <form className="my-3" onSubmit={addNote}>
+       <div className="mb-3">
+                    <label htmlFor="postid" className="form-label">Post ID (Optional)</label> <br>
+                      <small><i> (Enter post id if you wanna add to existing blog) </i> </small>
+
+                    <input type="text" className="form-control" id="postid" name="postid" value={note.postid} onChange={onChange} minLength={5} required />
+                </div>
                 <div className="mb-3">
                     <label htmlFor="title" className="form-label">Title</label>
                     <input type="text" className="form-control" id="title" name="title" aria-describedby="emailHelp" value={note.title} onChange={onChange} minLength={5} required /> 
                 </div>
                 <div className="mb-3">
-                    <label htmlFor="description" className="form-label">Description</label>
-                    <input type="text" className="form-control" id="description" name="description" value={note.description} onChange={onChange} minLength={5} required />
+                    <label htmlFor="description" className="form-label">Short Description</label>
+                    <input type="text" className="form-control" id="sdescription" name="sdescription" value={note.sdescription} onChange={onChange} minLength={5} required />
+                </div>
+ <div className="mb-3">
+                    <label htmlFor="description" className="form-label">Long Description</label>
+                    <input type="text" className="form-control" id="ldescription" name="ldescription" value={note.ldescription} onChange={onChange} minLength={5} required />
                 </div>
                 <div className="mb-3">
                     <label htmlFor="tag" className="form-label">Image Link</label>

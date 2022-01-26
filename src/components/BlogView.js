@@ -43,6 +43,10 @@ const BlogView=  (props)=> {
 
         return (
          <div>
+     
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <br></br>
 <div className="container-fluid">
     <div className="row content">
@@ -70,7 +74,7 @@ const BlogView=  (props)=> {
         <h2>{post.title} </h2>
    <h5><span className="glyphicon glyphicon-time"></span> Post by {post.author}, Sep 27, 2015.</h5>
         <h5><span className="label label-danger">Food</span> <span className="label label-primary">Ipsum</span></h5><br></br>
-        <p>(post.text}</p>
+        <p>{post.text}</p>
           <br></br><br></br>
         
         <h4><small>RECENT POSTS</small></h4>

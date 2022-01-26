@@ -4,11 +4,11 @@ import { useParams } from "react-router-dom"
 import { useHistory } from 'react-router-dom'
   
 
-const BlogView=   (props)=> {
+const BlogView=  (props)=> {
         let { title} = props;
   let {tag} = useParams();
  
-  const [post, setPost] = useState({});
+  const [post, setPost] = useState({title : "", img : "", text : "", author : ""});
 
   let history = useHistory();
   
@@ -24,7 +24,7 @@ const BlogView=   (props)=> {
   let json = await response.json();
   
   if(json.success) {
-    setPost(json.post);
+    return json.post;
   }
     
   else {
@@ -34,15 +34,19 @@ const BlogView=   (props)=> {
     
     
   }
-  getPost();
-  alert(JSON.stringify(post));
+  
+   getPost().then((po) => {
+     setPost({'title' : po.title, 'img' : po.body.img,'text' : po.body.text, 'author' : po.author});
+   });
+  
+
 
         return (
           
             <main role="main" className="container">
       <div className="jumbotron">
         <h1>{post.title}</h1>
-        <p className="lead">"post.body.text"}</p>
+        <p className="lead">{post.text}</p>
         <a className="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs »</a>
       </div>
     </main>

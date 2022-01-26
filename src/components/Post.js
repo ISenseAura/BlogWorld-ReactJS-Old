@@ -28,7 +28,7 @@ const AddPost = (props) => {
         }
     }
 
-     const [note, setNote] = useState({title: "", description: "", img: ""})
+     const [note, setNote] = useState({postid : "", title: "", ldescription: "", img: "", sdescriotion : ""})
     
      const addNote = async (e) => {
     // TODO: API Call

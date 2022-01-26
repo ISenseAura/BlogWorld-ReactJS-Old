@@ -8,7 +8,7 @@ const BlogView=  (props)=> {
         let { title} = props;
   let {tag} = useParams();
  
-  const [post, setPost] = useState({title : "", img : "", text : "", author : ""});
+  const [post, setPost] = useState({title : "", img : "", text : "", author : "",post:""});
 
   let history = useHistory();
   
@@ -36,7 +36,7 @@ const BlogView=  (props)=> {
   }
   
    getPost().then((po) => {
-     setPost({'title' : po.title, 'img' : po.body.img,'text' : po.body.text, 'author' : po.author});
+     setPost({'title' : po.title, 'img' : po.body.img,'text' : po.body.text, 'author' : po.author, 'date' : po.dateCreated});
    });
   
 
@@ -72,7 +72,7 @@ const BlogView=  (props)=> {
       <div className="col-sm-9">
         
         <h2>{post.title} </h2>
-   <h5><span className="glyphicon glyphicon-time"></span> Post by {post.author}, Sep 27, 2015.</h5>
+   <h5><span className="glyphicon glyphicon-time"></span> Post by {post.author}, {post.date}.</h5>
         <h5><span className="label label-danger">Food</span> <span className="label label-primary">Ipsum</span></h5><br></br>
         <p>{post.text}</p>
           <br></br><br></br>

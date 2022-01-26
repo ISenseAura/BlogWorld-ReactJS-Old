@@ -1,4 +1,5 @@
 import React from 'react'
+import {useState} from 'react'
 import { useParams } from "react-router-dom"
 import { useHistory } from 'react-router-dom'
   
@@ -6,8 +7,8 @@ import { useHistory } from 'react-router-dom'
 const BlogView=   (props)=> {
         let { title} = props;
   let {tag} = useParams();
-  alert(tag);
-  let post;
+ 
+  const [post, setPost] = useState({});
 
   let history = useHistory();
   
@@ -23,7 +24,7 @@ const BlogView=   (props)=> {
   let json = await response.json();
   
   if(json.success) {
-    post = json.post;
+    setPost(json.post);
   }
     
   else {
@@ -35,15 +36,16 @@ const BlogView=   (props)=> {
   }
   getPost();
   alert(JSON.stringify(post));
+
         return (
           
-            <div className="container my-3">
-            <h1> {post.title} </h1>
-            <figure class="figure">
-              <img src="post.img" class="figure-img img-fluid rounded" alt="..."></img>
-  <figcaption class="figure-caption"> {title} </figcaption>
-</figure>
-            </div>
+            <main role="main" className="container">
+      <div className="jumbotron">
+        <h1>{post.title}</h1>
+        <p className="lead">"post.body.text"}</p>
+        <a className="btn btn-lg btn-primary" href="../../components/navbar/" role="button">View navbar docs »</a>
+      </div>
+    </main>
         )
 }
 

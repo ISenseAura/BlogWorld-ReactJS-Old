@@ -1,10 +1,20 @@
 import React from 'react'
 import { useParams } from "react-router-dom"
 
-const BlogView= (props)=> {
+const BlogView=  async (props)=> {
         let { title} = props;
   let {tag} = useParams();
 
+  const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/get/" + tag, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+              'auth-token' : localStorage.getItem("token")
+            }
+
+        });
+  
+  if()
   
         return (
           

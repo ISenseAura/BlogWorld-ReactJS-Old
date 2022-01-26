@@ -6,6 +6,7 @@ import { useHistory } from 'react-router-dom'
 const BlogView=   (props)=> {
         let { title} = props;
   let {tag} = useParams();
+  alert(tag);
   let post;
 
   let history = useHistory();
@@ -20,6 +21,7 @@ const BlogView=   (props)=> {
 
         });
   
+    alert(response);
   if(response.success) {
     post = response.post;
   }

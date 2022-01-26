@@ -11,10 +11,10 @@ const BlogView=   (props)=> {
   let history = useHistory();
   
   const getPost = async () => {
-  const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/get/" + tag, {
+  const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/post/" + tag, {
             method: 'GET',
             headers: {
-                'Content-Type': 'application/json',
+                'content-type': 'application/json',
               'auth-token' : localStorage.getItem("token")
             }
 

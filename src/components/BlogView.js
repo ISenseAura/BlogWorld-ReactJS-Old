@@ -63,6 +63,7 @@ const BlogView=  (props)=> {
           </span>
         </div>
       </div>
+        
   
       <div className="col-sm-9">
         

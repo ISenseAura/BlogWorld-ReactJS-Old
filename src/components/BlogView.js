@@ -20,18 +20,21 @@ const BlogView=   (props)=> {
             }
 
         });
+  let json = await response.json();
   
-    alert(response);
-  if(response.success) {
-    post = response.post;
+  if(json.success) {
+    post = json.post;
   }
+    
   else {
     alert("Something went wrong!");
     history.push("/");
   }
+    
+    
   }
   getPost();
-  
+  alert(JSON.stringify(post));
         return (
           
             <div className="container my-3">

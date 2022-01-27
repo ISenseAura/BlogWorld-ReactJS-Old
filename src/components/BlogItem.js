@@ -9,6 +9,9 @@ import { Link } from "react-router-dom";
 const BlogItem = (props)=> {
         let { title, description, imageUrl, author, date, id, likes, dislikes, fetchB } = props;
   
+  
+  
+  
   const deletePost = async () => {
     const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/delete/" + id, {
             method: 'GET',

@@ -14,6 +14,8 @@ const Blogs = (props)=>{
     const capitalizeFirstLetter = (string) => {
         return string.charAt(0).toUpperCase() + string.slice(1);
     } 
+    
+    
 
     const updateBlogs = async ()=> {
         props.setProgress(10);

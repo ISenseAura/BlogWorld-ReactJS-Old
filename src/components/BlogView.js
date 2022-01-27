@@ -26,8 +26,8 @@ const BlogView = (props) => {
   };
     let newDate = date.split("-");
     let year = newDate[0];
-    let month =  newDate[1];
-    let day = newDate[2].charAt(0) + newDate[2].chatAt(1);
+    let month =  months[newDate[1]];
+    let day = newDate[2].charAt(0) + newDate[2].charAt(1);
     
     return (month + " " + day + ", " + year);
     
@@ -126,7 +126,17 @@ const BlogView = (props) => {
               <span className="label label-danger">Food</span>{" "}
               <span className="label label-primary">Ipsum</span>
             </h5>
-            <br></br>
+            <br>
+                      <img
+                      src={post.img}
+                      className="img-circle"
+                      height="65"
+                      width="65"
+                      alt="Avatar"
+                    />
+                </br>
+
+
             <p>{post.text}</p>
             <br></br>
             <br></br>

@@ -5,6 +5,8 @@ import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 import InfiniteScroll from "react-infinite-scroll-component";
 
+var serverAdd = "https://glistening-lackadaisical-glue.glitch.me";
+
 const Blogs = (props)=>{
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
@@ -19,7 +21,7 @@ const Blogs = (props)=>{
 
     const updateBlogs = async ()=> {
         props.setProgress(10);
-        const url = `https://glistening-lackadaisical-glue.glitch.me/api/posts/posts`; 
+        const url = `${serverAdd}/api/posts/posts`; 
         setLoading(true)
         let data = await fetch(url);
         props.setProgress(30);
@@ -37,9 +39,9 @@ const Blogs = (props)=>{
         // eslint-disable-next-line
     }, [])
 
-
+ 
     const fetchMoreData = async () => {   
-        const url = `https://glistening-lackadaisical-glue.glitch.me/api/posts/posts`;
+        const url = `${serverAdd}/api/posts/posts`;
          setPage(page+1) 
         let data = await fetch(url);
         let parsedData = await data.json()

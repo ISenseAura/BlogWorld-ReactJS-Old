@@ -3,6 +3,8 @@ import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
+var serverAdd = "https://glistening-lackadaisical-glue.glitch.me";
+
 const BlogView = (props) => {
   let { title } = props;
   let { tag } = useParams();
@@ -45,7 +47,7 @@ const BlogView = (props) => {
 
   const getPost = async () => {
     const response = await fetch(
-      "https://glistening-lackadaisical-glue.glitch.me/api/posts/post/" + tag,
+      serverAdd + "/api/posts/post/" + tag,
       {
         method: "GET",
         headers: {
@@ -127,15 +129,15 @@ const BlogView = (props) => {
               <span className="label label-primary">Ipsum</span>
             </h5>
             <br>
-                      <img
+                   
+                </br>
+                <img
                       src={post.img}
                       className="img-circle"
                       height="65"
                       width="65"
                       alt="Avatar"
                     />
-                </br>
-
 
             <p>{post.text}</p>
             <br></br>

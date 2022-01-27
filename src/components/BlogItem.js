@@ -3,7 +3,7 @@ import BlogView from './BlogView'
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import { Link } from "react-router-dom";
 
-
+var serverAdd = "https://glistening-lackadaisical-glue.glitch.me";
 
 
 const BlogItem = (props)=> {
@@ -13,7 +13,7 @@ const BlogItem = (props)=> {
   
   
   const deletePost = async () => {
-    const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/delete/" + id, {
+    const response = await fetch(serverAdd + "/api/posts/delete/" + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -35,7 +35,7 @@ const BlogItem = (props)=> {
   
   const likePost = async () => {
     
-    const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/like/" + id, {
+    const response = await fetch(serverAdd + "/api/posts/like/" + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -62,7 +62,7 @@ const BlogItem = (props)=> {
   const dislikePost = async () => {
     
         alert(id);
-    const response = await fetch("https://glistening-lackadaisical-glue.glitch.me/api/posts/dislike/" + id, {
+    const response = await fetch(serverAdd + "/api/posts/dislike/" + id, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
